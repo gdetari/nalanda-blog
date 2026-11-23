@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light dark;
+  --paper: #faf7ef; --ink: #322b25; --muted: #675d52; --accent: #8c4329; --line: #ded4c3;
+  --wash: #f2eadc;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1e1b18; --ink: #eee7dd; --muted: #c2b4a4; --accent: #efae90; --line: #54473e; --wash: #2c2520; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1.18rem/1.75 Georgia, serif; }
+.frame { width: min(100% - 3rem, 39rem); margin-inline: auto; }
+header { border-bottom: 1px solid var(--line); }
+header .frame { min-height: 4.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+header a { color: var(--ink); text-decoration: none; }
+.brand { font-weight: 700; }
+.label, time, nav, footer { font: .82rem/1.4 system-ui, sans-serif; color: var(--muted); }
+.label { letter-spacing: .15em; text-transform: uppercase; }
+main.frame { min-height: 63vh; padding-block: clamp(3rem, 10vw, 6.5rem) 4rem; }
+h1, h2, h3 { line-height: 1.14; letter-spacing: -.025em; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 9vw, 4.4rem); margin: .85rem 0 1rem; overflow-wrap: anywhere; }
+h2 { font-size: 1.65rem; }
+h3 { font-size: 1.3rem; }
+a { color: var(--accent); text-underline-offset: .16em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.entries { list-style: none; margin: 3rem 0 0; padding: 0; }
+.entries li { border-top: 1px solid var(--line); padding: 1.15rem 0; }
+.entries a { display: inline; font-size: 1.35rem; color: var(--ink); font-weight: 700; overflow-wrap: anywhere; }
+.entries time { margin-top: .4rem; display: block; }
+.prose { margin-block: 2.65rem; overflow-wrap: anywhere; }
+.prose p, .prose ul, .prose ol { margin-block: 1.15rem; }
+.prose h2, .prose h3 { margin-block: 2rem .9rem; }
+blockquote { border-inline-start: .2rem solid var(--line); padding-inline-start: 1.25rem; margin-inline: 0; color: var(--muted); }
+pre { background: var(--wash); padding: 1rem; overflow: auto; font-size: .88rem; }
+code { font-size: .85em; }
+hr { border: 0; border-top: 1px solid var(--line); }
+footer { border-top: 1px solid var(--line); padding-block: 1.35rem; }
+@media (max-width: 480px) {
+  .frame { width: min(100% - 2rem, 39rem); }
+  body { font-size: 1.08rem; }
+}

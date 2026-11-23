@@ -1,0 +1,5 @@
+dist/
+drafts/
+.obsidian/
+.DS_Store
+__pycache__/
