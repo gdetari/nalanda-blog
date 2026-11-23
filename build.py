@@ -57,9 +57,8 @@ def page(title, content, description="", path="/"):
 <link rel="stylesheet" href="{e(BASE)}/style.css">
 </head>
 <body>
-<header><div class="frame"><a class="brand" href="{e(BASE)}/">{e(sitename)}</a><nav aria-label="Main navigation"><a href="{e(BASE)}/">Writing</a></nav></div></header>
+<header><div class="frame"><a class="brand" href="{e(BASE)}/">{e(sitename)}</a></div></header>
 <main class="frame" id="main">{content}</main>
-<footer><div class="frame">{e(sitename)}</div></footer>
 </body>
 </html>
 """
@@ -107,6 +106,7 @@ for term, slug, title, description, article in sorted(posts, reverse=True):
     (folder / "index.html").write_text(page(title, content, description, path), encoding="utf-8")
     entries.append(f'<li><a href="{e(BASE + path)}">{e(title)}</a>{post_date(term)}</li>')
 listing = '<ul class="entries">' + "".join(entries) + "</ul>" if entries else "<p>No posts yet.</p>"
-home = f'<p class="label">Personal blog</p><h1>{e(CONFIG["title"])}</h1><p>{e(CONFIG["description"])}</p>{listing}'
+description = f'<p>{e(CONFIG["description"])}</p>' if CONFIG["description"] else ""
+home = f'<h1>{e(CONFIG["title"])}</h1>{description}{listing}'
 (OUT / "index.html").write_text(page(CONFIG["title"], home), encoding="utf-8")
 print(f"Built {len(posts)} post(s).")

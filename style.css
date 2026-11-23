@@ -10,11 +10,10 @@
 body { margin: 0; background: var(--paper); color: var(--ink); font: 1.18rem/1.75 Georgia, serif; }
 .frame { width: min(100% - 3rem, 39rem); margin-inline: auto; }
 header { border-bottom: 1px solid var(--line); }
-header .frame { min-height: 4.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+header .frame { min-height: 4.6rem; display: flex; align-items: center; }
 header a { color: var(--ink); text-decoration: none; }
 .brand { font-weight: 700; }
-.label, time, nav, footer { font: .82rem/1.4 system-ui, sans-serif; color: var(--muted); }
-.label { letter-spacing: .15em; text-transform: uppercase; }
+time { font: .82rem/1.4 system-ui, sans-serif; color: var(--muted); }
 main.frame { min-height: 63vh; padding-block: clamp(3rem, 10vw, 6.5rem) 4rem; }
 h1, h2, h3 { line-height: 1.14; letter-spacing: -.025em; text-wrap: balance; }
 h1 { font-size: clamp(2.5rem, 9vw, 4.4rem); margin: .85rem 0 1rem; overflow-wrap: anywhere; }
@@ -33,7 +32,6 @@ blockquote { border-inline-start: .2rem solid var(--line); padding-inline-start:
 pre { background: var(--wash); padding: 1rem; overflow: auto; font-size: .88rem; }
 code { font-size: .85em; }
 hr { border: 0; border-top: 1px solid var(--line); }
-footer { border-top: 1px solid var(--line); padding-block: 1.35rem; }
 @media (max-width: 480px) {
   .frame { width: min(100% - 2rem, 39rem); }
   body { font-size: 1.08rem; }

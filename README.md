@@ -1,4 +1,4 @@
-# Dharma
+# Nalanda
 
 A small, text-first blog with warm paper tones, Georgia typography, and no tracking or external fonts. The design is Ink-inspired.
 
